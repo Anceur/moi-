@@ -1457,3 +1457,132 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* General Card Styles */
+.card {
+  perspective: 1000px;
+  width: 190px;
+  height: 254px;
+  margin: 10px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+  transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.card-front {
+  background: linear-gradient(45deg, #45505b, #0563bb);
+}
+
+.card-back {
+  background: rgba(0, 0, 0, 0.8);
+  transform: rotateY(180deg);
+}
+
+.card .content {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+
+/* Media Query for Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+    width: 150px; /* Smaller width for mobile devices */
+    height: 200px; /* Adjust height accordingly */
+    margin: 5px; /* Reduce margin on mobile screens */
+  }
+
+  .card .content {
+    font-size: 1.1em; /* Reduce font size for mobile */
+  }
+
+  .card-front,
+  .card-back {
+    padding: 8px; /* Adjust padding for mobile */
+  }
+
+  .swiper-container {
+    padding: 10px; /* Adjust swiper padding for mobile */
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center; /* Center content on mobile */
+    align-items: center;
+  }
+}
+
+/* Media Query for Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .card {
+    width: 170px; /* Adjust card size for smaller tablets */
+    height: 230px;
+    margin: 8px; /* Adjust margin */
+  }
+
+  .card .content {
+    font-size: 1.3em; /* Increase font size slightly for tablets */
+  }
+
+  .card-front,
+  .card-back {
+    padding: 12px; /* Adjust padding for tablets */
+  }
+}
+
+/* Media Query for Larger Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .card {
+    width: 190px; /* Standard size for larger tablets */
+    height: 254px;
+  }
+
+  .card .content {
+    font-size: 1.4em; /* Increase font size slightly */
+  }
+
+  .card-front,
+  .card-back {
+    padding: 15px; /* Adjust padding */
+  }
+}
+
+/* For larger screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .card {
+    width: 220px; /* Larger card size for desktops */
+    height: 300px;
+  }
+
+  .card .content {
+    font-size: 1.5em;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 20px;
+  }
+}
